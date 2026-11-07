@@ -1,0 +1,112 @@
+(base) andrewvargas@Andrews-MacBook-Air-64 ~ % cd desktop
+(base) andrewvargas@Andrews-MacBook-Air-64 desktop % cd lab_04
+(base) andrewvargas@Andrews-MacBook-Air-64 lab_04 % cd ..         
+(base) andrewvargas@Andrews-MacBook-Air-64 desktop % cd ..
+(base) andrewvargas@Andrews-MacBook-Air-64 ~ % mkdir ~p ~/Lab04/src ~/Lab04/output
+zsh: no such user or named directory: p
+(base) andrewvargas@Andrews-MacBook-Air-64 ~ % mkdir -p  ~/Lab04/src ~/Lab04/output
+(base) andrewvargas@Andrews-MacBook-Air-64 ~ % cd lab04
+(base) andrewvargas@Andrews-MacBook-Air-64 lab04 % ls
+output	src
+(base) andrewvargas@Andrews-MacBook-Air-64 lab04 % touch paging.c
+(base) andrewvargas@Andrews-MacBook-Air-64 lab04 % ls
+output		paging.c	src
+(base) andrewvargas@Andrews-MacBook-Air-64 lab04 % ./paging > ../output/paging_output.txt
+zsh: no such file or directory: ./paging
+(base) andrewvargas@Andrews-MacBook-Air-64 lab04 % ls
+output		paging.c	src
+(base) andrewvargas@Andrews-MacBook-Air-64 lab04 % rm paging.c
+(base) andrewvargas@Andrews-MacBook-Air-64 lab04 % cd src
+(base) andrewvargas@Andrews-MacBook-Air-64 src % touch paging.c
+(base) andrewvargas@Andrews-MacBook-Air-64 src % gcc -o paging paging.c
+(base) andrewvargas@Andrews-MacBook-Air-64 src % ./paging > ../output/paging_output.txt
+cat ../output/paging_output.txt
+VA 300 (hex 0x12C, binary 0100101100) -> page 1, offset 44, frame 5
+PA 1324 (hex 0x52C, binary 10100101100)
+VA 800 (hex 0x320, binary 1100100000) -> page 3, offset 32, frame 0
+PA 32 (hex 0x020, binary 00000100000)
+(base) andrewvargas@Andrews-MacBook-Air-64 src % touch paging_extra.c
+(base) andrewvargas@Andrews-MacBook-Air-64 src % gcc -o paging_extra paging_extra.c
+paging_extra.c:65:14: error: expected '}'
+   65 |     return 0;
+      |              ^
+paging_extra.c:56:16: note: to match this '{'
+   56 | int main(void) {
+      |                ^
+1 error generated.
+(base) andrewvargas@Andrews-MacBook-Air-64 src % gcc -o paging_extra paging_extra.c
+(base) andrewvargas@Andrews-MacBook-Air-64 src % ./paging_extra > ../output/paging_extra_output.txt
+(base) andrewvargas@Andrews-MacBook-Air-64 src % ./pagingg_extra
+zsh: no such file or directory: ./pagingg_extra
+(base) andrewvargas@Andrews-MacBook-Air-64 src % ./paging_extra
+VA 300 (hex 0x12C, binary 0100101100) -> page 1, offset 44, frame 5
+PA 1324 (hex 0x52C, binary 10100101100)
+VA 800 (hex 0x320, binary 1100100000) -> page 3, offset 32, frame 0
+PA 32 (hex 0x020, binary 00000100000)
+VA 50 (hex 0x032, binary 0000110010) -> page 0, offset 50, frame 3
+PA 818 (hex 0x332, binary 01100110010)
+VA 1023 (hex 0x3FF, binary 1111111111) -> page 3, offset 255, frame 0
+PA 255 (hex 0x0FF, binary 00011111111)
+VA 1024: invalid virtual address
+VA -1: invalid virtual address
+(base) andrewvargas@Andrews-MacBook-Air-64 src % touch paging_mapping.c
+(base) andrewvargas@Andrews-MacBook-Air-64 src % gcc -o paging_mapping paging_mapping.c
+(base) andrewvargas@Andrews-MacBook-Air-64 src % ./paging_mapping > ../output/paging_mapping_output.txt
+(base) andrewvargas@Andrews-MacBook-Air-64 src % ./paging_mapping
+VA 300 (hex 0x12C, binary 0100101100) -> page 1, offset 44, frame 2
+PA 556 (hex 0x22C, binary 01000101100)
+VA 800 (hex 0x320, binary 1100100000) -> page 3, offset 32, frame 0
+PA 32 (hex 0x020, binary 00000100000)
+(base) andrewvargas@Andrews-MacBook-Air-64 src % touch rocesses.c
+(base) andrewvargas@Andrews-MacBook-Air-64 src % rm rocesses.c
+(base) andrewvargas@Andrews-MacBook-Air-64 src % touch processes.c 
+(base) andrewvargas@Andrews-MacBook-Air-64 src % gcc -o processes processes.c
+(base) andrewvargas@Andrews-MacBook-Air-64 src % ./processes > ../output/processes_output.txt
+(base) andrewvargas@Andrews-MacBook-Air-64 src % ./processes
+Process A, VA 300:
+VA 300 -> page 1, frame 5, offset 44 -> PA 1324
+Process B, VA 300:
+VA 300 -> page 1, frame 2, offset 44 -> PA 556
+Process A, VA 600:
+VA 600: page fault (page 2 not present)
+Process A, VA 800:
+VA 800: invalid access (page 3)
+(base) andrewvargas@Andrews-MacBook-Air-64 src % touch proc_load.c
+(base) andrewvargas@Andrews-MacBook-Air-64 src % gcc -o proc_load proc_load.c && ./proc_load > ../output/proc_load_output.txt
+(base) andrewvargas@Andrews-MacBook-Air-64 src % ./proc_load
+Process A, VA 300:
+VA 300 -> page 1, frame 5, offset 44 -> PA 1324
+Process B, VA 300:
+VA 300 -> page 1, frame 2, offset 44 -> PA 556
+Process A, VA 600:
+VA 600: page fault (page 2 not present)
+Process A, VA 800:
+VA 800: invalid access (page 3)
+VA 600 -> page 2, frame 7, offset 88 -> PA 1880
+(base) andrewvargas@Andrews-MacBook-Air-64 src % touch proc_shared.c
+(base) andrewvargas@Andrews-MacBook-Air-64 src % gcc -o proc_shared proc_shared.c
+(base) andrewvargas@Andrews-MacBook-Air-64 src % ./proc_shared > ../output/proc_shared_output.txt
+(base) andrewvargas@Andrews-MacBook-Air-64 src % touch linkedlist.c
+(base) andrewvargas@Andrews-MacBook-Air-64 src % gcc -o linkedlist linkedlist.c
+(base) andrewvargas@Andrews-MacBook-Air-64 src % ./linkedlist > ../output/linkedlist_output.txt
+(base) andrewvargas@Andrews-MacBook-Air-64 src % ./linkedlist
+Linked List: 10 -> 20 -> 30 -> NULL
+Linked List after deletion: 10 -> 30 -> NULL
+(base) andrewvargas@Andrews-MacBook-Air-64 src % touch freespace.c
+(base) andrewvargas@Andrews-MacBook-Air-64 src % gcc -o freespace freespace.c
+(base) andrewvargas@Andrews-MacBook-Air-64 src % ./freespace
+Deallocated 100
+Deallocated 300
+Deallocated 200
+Free list: 100 -> 300 -> 200 -> NULL
+Allocated 150
+Free list: 100 -> 150 -> 200 -> NULL
+Allocated 100
+Free list: 150 -> 200 -> NULL
+Allocate 500 failed, no block big enough
+Free list: 150 -> 200 -> NULL
+Deallocated 250
+Free list: 150 -> 200 -> 250 -> NULL
+(base) andrewvargas@Andrews-MacBook-Air-64 src % ./freespace > ../output/freespace_output.txt
+(base) andrewvargas@Andrews-MacBook-Air-64 src % history 0 > ~/Lab04/output/commands.txt
+(base) andrewvargas@Andrews-MacBook-Air-64 src % 

@@ -1,0 +1,2 @@
+Linked List: 10 -> 20 -> 30 -> NULL
+Linked List after deletion: 10 -> 30 -> NULL

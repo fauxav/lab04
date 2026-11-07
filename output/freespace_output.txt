@@ -1,0 +1,12 @@
+Deallocated 100
+Deallocated 300
+Deallocated 200
+Free list: 100 -> 300 -> 200 -> NULL
+Allocated 150
+Free list: 100 -> 150 -> 200 -> NULL
+Allocated 100
+Free list: 150 -> 200 -> NULL
+Allocate 500 failed, no block big enough
+Free list: 150 -> 200 -> NULL
+Deallocated 250
+Free list: 150 -> 200 -> 250 -> NULL

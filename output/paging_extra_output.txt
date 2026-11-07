@@ -1,0 +1,10 @@
+VA 300 (hex 0x12C, binary 0100101100) -> page 1, offset 44, frame 5
+PA 1324 (hex 0x52C, binary 10100101100)
+VA 800 (hex 0x320, binary 1100100000) -> page 3, offset 32, frame 0
+PA 32 (hex 0x020, binary 00000100000)
+VA 50 (hex 0x032, binary 0000110010) -> page 0, offset 50, frame 3
+PA 818 (hex 0x332, binary 01100110010)
+VA 1023 (hex 0x3FF, binary 1111111111) -> page 3, offset 255, frame 0
+PA 255 (hex 0x0FF, binary 00011111111)
+VA 1024: invalid virtual address
+VA -1: invalid virtual address

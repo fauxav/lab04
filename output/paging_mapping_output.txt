@@ -1,0 +1,4 @@
+VA 300 (hex 0x12C, binary 0100101100) -> page 1, offset 44, frame 2
+PA 556 (hex 0x22C, binary 01000101100)
+VA 800 (hex 0x320, binary 1100100000) -> page 3, offset 32, frame 0
+PA 32 (hex 0x020, binary 00000100000)

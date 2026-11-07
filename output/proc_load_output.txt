@@ -1,0 +1,9 @@
+Process A, VA 300:
+VA 300 -> page 1, frame 5, offset 44 -> PA 1324
+Process B, VA 300:
+VA 300 -> page 1, frame 2, offset 44 -> PA 556
+Process A, VA 600:
+VA 600: page fault (page 2 not present)
+Process A, VA 800:
+VA 800: invalid access (page 3)
+VA 600 -> page 2, frame 7, offset 88 -> PA 1880
