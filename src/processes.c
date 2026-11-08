@@ -1,8 +1,8 @@
 #include <stdio.h>                                   // for printf
 
-#define PAGE_SIZE 256                                // each page/frame is 256 bytes
-#define NUM_PAGES 4                                  // 4 virtual pages per process
-#define NUM_FRAMES 8                                 // 8 physical frames total
+#define PAGE_SIZE 256                                
+#define NUM_PAGES 4                                  
+#define NUM_FRAMES 8                                 
 
 typedef struct {
     int frameNumber;                                 // which frame the page lives in (-1 = none)
